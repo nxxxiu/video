@@ -13,14 +13,13 @@ class VideoController extends Controller
 {
     protected $AccessKeyId='LTAIQCB8iUUAb7qN';
     protected $AccessKeySecret='6g2bbbdIibTrclWQBBeD2tlReYtkkr';
-    protected $username='oss-cn-beijing.aliyuncs.com';
     protected $bucket='bucket1809a';
 
     //转移视频文件到oss
     public function saveToOss()
     {
         //视频转移后 删除本地文件
-        $ossClient = new OssClient($this->AccessKeyId, $this->AccessKeySecret, $this->username);
+        $ossClient = new OssClient($this->AccessKeyId, $this->AccessKeySecret, env('USERNAME'));
         //获取目录中的文件
         $file_path=storage_path('app/public/files');
         $file_list=scandir($file_path);
