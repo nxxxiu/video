@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index','VideoController@index');
+Route::get('/index','OssController@index');
+Route::get('/videoindex','OssController@videoindex');
 
-Route::get('/videoindex','VideoController@videoindex');
+//转移本地文件
+Route::get('/saveToOss','VideoController@saveToOss');
