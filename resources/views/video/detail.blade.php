@@ -7,7 +7,7 @@
 <body>
     <p>视频名称：{{$data['vname']}}</p>
     <div style="border: 1px solid lightgrey">
-        <video src="/storage/{{$data['path']}}" controls="controls"></video>
+        <video src="{{env('CDN_HOST')}}/{{$data['path']}}" controls="controls"></video>
     </div>
 </body>
 </html>
