@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
@@ -41,8 +42,17 @@ class VideoController extends Controller
 
             //上传成功后删除本地文件
             echo $local_file.'上传成功';echo '<br>';
-            unlink($local_file);
+//            unlink($local_file);
         }
 
+    }
+
+    //详情页面
+    public function detail()
+    {
+        $vid=$_GET['vid'];
+        $data=Video::where(['vid'=>$vid])->first()->toArray();
+//        echo "<pre>";print_r($data);echo "</pre>";
+        return view('video.detail',compact('data'));
     }
 }

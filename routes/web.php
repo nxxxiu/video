@@ -20,3 +20,6 @@ Route::get('/videoindex','OssController@videoindex');
 
 //转移本地文件
 Route::get('/saveToOss','VideoController@saveToOss');
+
+//视频详情页
+Route::get('/detail','VideoController@detail');
