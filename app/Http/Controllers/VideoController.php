@@ -28,7 +28,7 @@ class VideoController extends Controller
             if ($v=='.' || $v=='..'){
                 continue;
             }
-            $file_name=Str::random(5).'.jpg';
+            $file_name='files/'.$v;
             $local_file=$file_path.'/'.$v;
             echo $local_file;
             try{
