@@ -22,7 +22,7 @@ Route::get('/videoindex','OssController@videoindex');
 Route::get('/saveToOss','VideoController@saveToOss');
 
 //OSS事件通知
-Route::get('/notify','VideoController@notify');
+Route::post('/notify','VideoController@notify');
 
 //视频详情页
 Route::get('/detail','VideoController@detail');
