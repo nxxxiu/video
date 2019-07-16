@@ -41,7 +41,7 @@ class VideoController extends Controller
 
             //上传成功后删除本地文件
             echo $local_file.'上传成功';echo '<br>';
-//            unlink($local_file);
+            unlink($local_file);
         }
 
     }
@@ -53,5 +53,18 @@ class VideoController extends Controller
         $data=Video::where(['vid'=>$vid])->first()->toArray();
 //        echo "<pre>";print_r($data);echo "</pre>";
         return view('video.detail',compact('data'));
+    }
+
+    public  function aliyun()
+    {
+        return view('video.aliyun ');
+    }
+
+    //OSS事件通知
+    public function notify()
+    {
+        $json=file_get_contents("php://input");
+        $log_str=date("Y-m-d H:i:s").'>>>>>>>>'.$json."\n";
+        file_put_contents("logs/oss.log",$log_str,FILE_APPEND);
     }
 }

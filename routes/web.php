@@ -23,3 +23,4 @@ Route::get('/saveToOss','VideoController@saveToOss');
 
 //视频详情页
 Route::get('/detail','VideoController@detail');
+Route::get('/aliyun','VideoController@aliyun');
