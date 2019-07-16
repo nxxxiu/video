@@ -17,10 +17,12 @@ Route::get('/', function () {
 
 Route::get('/index','OssController@index');
 Route::get('/videoindex','OssController@videoindex');
-Route::get('/notify','OssController@notify');//OSS事件通知
 
 //转移本地文件
 Route::get('/saveToOss','VideoController@saveToOss');
+
+//OSS事件通知
+Route::get('/notify','VideoController@notify');
 
 //视频详情页
 Route::get('/detail','VideoController@detail');
